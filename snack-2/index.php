@@ -25,11 +25,34 @@
 
     <h1>Snack 2</h1>
 
-    <?php if (strlen($name) > 3 === false || $test_email_1 === false || $test_email_2 === false || $test_age === false) { ?>
+    <!-- Se lascio un paramentro vuoto -->
+    <?php
+        if(empty($name) || empty($email) || empty($age)) {
+        echo 'Parametri mancanti, non è possibile verificare i tuoi dati di acccesso';
+        }
+    ?>  
+
+    <?php if(
+            $test_name === false || 
+            $test_email_1 === false || 
+            $test_email_2 === false || 
+            $test_age === false
+            ) { ?>
         <div>Accesso negato</div>
     <?php } else { ?>
         <div>Accesso riuscito</div>
     <?php } ?>
-    
+        
+        <!-- Altro modo -->
+        <!-- if(
+            $test_name &&
+            $test_email_1 !== false &&
+            $test_email_2 !== false && 
+            $test_age
+            ) {
+        <div>Accesso riuscito</div>
+        } else {
+        <div>Accesso negato</div>
+        } -->
 </body>
 </html>

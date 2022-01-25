@@ -40,20 +40,18 @@
     ?>
 
     <?php 
-        foreach ($students as $student) { ?>
+
+        foreach ($students as $student) {
+
+            $votes_sum = array_sum($student['grades']);
+            $avg_vote = $votes_sum / count($student['grades']);
+            ?>
+            
             <div>
-                <?php echo $student['name'], ' ', $student['lastname']; ?>
+                <?php echo $student['name'], ' ', $student['lastname'], ' ', round($avg_vote, 1); ?>
             </div>
              
         <?php } ?>
-
-        <!-- Formula calcolo media 
-        $numbers = array();
-        $sum;
-        foreach($numbers as $i) {
-        $sum += $i;
-        }
-        $media = $sum/count($numbers); -->
 
 </body>
 </html>
